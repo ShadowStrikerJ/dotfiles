@@ -15,6 +15,7 @@
 
 PATH="$HOME/.go/bin:$PATH"
 PATH="$HOME/go/bin:$PATH"
+PATH="$HOME/bin:$PATH"
 if [[ -f "/opt/homebrew/bin/brew" ]] then
   # If you're using macOS, you'll want this enabled
   eval "$(/opt/homebrew/bin/brew shellenv)"
@@ -70,6 +71,13 @@ bindkey '^p' history-search-backward
 bindkey '^n' history-search-forward
 bindkey '^[w' kill-region
 
+
+### ctrl+arrows
+bindkey "\e[1;5C" forward-word
+bindkey "\e[1;5D" backward-word
+# bindkey -s ^f "tmux-sessionizer\n"
+
+
 zle_highlight+=(paste:none)
 
 # History
@@ -99,3 +107,5 @@ alias c='clear'
 # Shell integrations
 eval "$(fzf --zsh)"
 eval "$(zoxide init --cmd cd zsh)"
+
+# [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
