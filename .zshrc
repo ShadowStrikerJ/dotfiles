@@ -57,6 +57,10 @@ zinit snippet OMZP::kubectl
 zinit snippet OMZP::kubectx
 zinit snippet OMZP::command-not-found
 
+# atuin
+zinit load atuinsh/atuin
+
+
 # Load completions
 autoload -Uz compinit && compinit
 
